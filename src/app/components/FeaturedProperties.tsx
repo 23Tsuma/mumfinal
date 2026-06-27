@@ -33,7 +33,7 @@ function PropertyCard({ p, onReserve, onExplore }: { p: Property; onReserve: (p:
   const rotatingImages = PROPERTY_ROTATING_IMAGES[p.name];
 
   return (
-    <div className="group relative bg-[#0d1a28] border border-white/8 rounded-2xl overflow-hidden hover:border-[#c9a84c]/30 transition-all duration-400 hover:shadow-2xl hover:shadow-[#c9a84c]/5 flex flex-col">
+    <div className="group relative bg-white border border-stone-100 rounded-2xl overflow-hidden hover:border-[#c9a84c]/40 transition-all duration-400 hover:shadow-xl hover:shadow-[#c9a84c]/8 flex flex-col shadow-sm">
       {/* Image */}
       <div className="relative h-56 overflow-hidden bg-[#0b1219]">
         {!imgError ? (
@@ -78,51 +78,51 @@ function PropertyCard({ p, onReserve, onExplore }: { p: Property; onReserve: (p:
       <div className="p-5 flex flex-col flex-1 gap-3">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
-            <div className="text-[9px] text-[#e5c158]/70 font-bold uppercase tracking-widest mb-0.5">{p.type}</div>
-            <h3 className="text-stone-100 text-base font-semibold tracking-wide group-hover:text-[#e5c158] transition-colors line-clamp-1"
+            <div className="text-[9px] text-[#c9a84c] font-bold uppercase tracking-widest mb-0.5">{p.type}</div>
+            <h3 className="text-[#1c2735] text-base font-semibold tracking-wide group-hover:text-[#c9a84c] transition-colors line-clamp-1"
               style={{ fontFamily: "'Playfair Display', serif" }}>
               {p.name}
             </h3>
           </div>
           <div className="flex items-center gap-1 shrink-0 bg-[#c9a84c]/10 border border-[#c9a84c]/20 px-2.5 py-1 rounded-lg">
-            <Star className="w-3 h-3 fill-[#e5c158] text-[#e5c158]" />
-            <span className="text-xs font-bold text-stone-200">{p.rating}</span>
-            <span className="text-[10px] text-stone-500">({p.reviews})</span>
+            <Star className="w-3 h-3 fill-[#c9a84c] text-[#c9a84c]" />
+            <span className="text-xs font-bold text-[#1c2735]">{p.rating}</span>
+            <span className="text-[10px] text-stone-400">({p.reviews})</span>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-stone-500 text-xs">
           <span className="flex items-center gap-1">
-            <MapPin className="w-3 h-3 text-[#c9a84c]/60" /> {p.location}
+            <MapPin className="w-3 h-3 text-[#c9a84c]/70" /> {p.location}
           </span>
           <span className="flex items-center gap-1">
-            <Users className="w-3 h-3 text-[#c9a84c]/60" /> {p.guests} guests
+            <Users className="w-3 h-3 text-[#c9a84c]/70" /> {p.guests} guests
           </span>
-          <span className="text-stone-600">{p.beds} beds · {p.baths} baths</span>
+          <span className="text-stone-400">{p.beds} beds · {p.baths} baths</span>
         </div>
 
-        <p className="text-xs text-stone-500 font-light leading-relaxed line-clamp-2 flex-1">{p.description}</p>
+        <p className="text-xs text-stone-500 leading-relaxed line-clamp-2 flex-1">{p.description}</p>
 
         {/* Footer */}
-        <div className="pt-3 border-t border-white/6 flex items-center justify-between gap-3">
+        <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-3">
           <div>
-            <div className="text-[#e5c158] font-bold text-base tracking-tight">
+            <div className="text-[#c9a84c] font-bold text-base tracking-tight">
               KES {p.price.toLocaleString()}
             </div>
-            <div className="text-[10px] text-stone-600 font-light">≈ ${p.priceUSD} / night</div>
+            <div className="text-[10px] text-stone-400">≈ ${p.priceUSD} / night</div>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={() => onExplore(p)}
-              className="px-3 py-1.5 rounded-lg text-xs font-medium border border-white/10 text-stone-400 hover:text-stone-200 hover:border-white/20 transition-all bg-white/3"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium border border-stone-200 text-stone-500 hover:text-[#1c2735] hover:border-stone-300 transition-all"
               type="button"
             >
               Details
             </button>
             <button
               onClick={() => onReserve(p)}
-              className="flex items-center gap-1.5 bg-gradient-to-r from-[#c9a84c] to-[#e5c158] text-[#0B151F] px-4 py-1.5 rounded-lg text-xs font-bold transition-all hover:brightness-110 shadow-md shadow-[#c9a84c]/10"
+              className="flex items-center gap-1.5 bg-gradient-to-r from-[#c9a84c] to-[#e5c158] text-[#0B151F] px-4 py-1.5 rounded-lg text-xs font-bold transition-all hover:brightness-110 shadow-sm shadow-[#c9a84c]/20"
               type="button"
             >
               <Calendar className="w-3.5 h-3.5" />
@@ -203,10 +203,10 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
   };
 
   return (
-    <section className="py-20 bg-[#050a10] relative overflow-hidden">
+    <section className="py-20 bg-[#f8f3ea] relative overflow-hidden">
       {/* Ambient glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#c9a84c]/3 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-900/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#c9a84c]/6 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-200/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
@@ -217,8 +217,8 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
               <div className="h-px w-8 bg-[#c9a84c]" />
               <span className="text-[#c9a84c] text-[10px] font-bold uppercase tracking-[0.3em]">Where to Stay</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-light text-white tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Handpicked Stays in <span className="text-gradient-gold">Diani</span>
+            <h2 className="text-3xl md:text-4xl font-light text-[#1c2735] tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Handpicked Stays in <span className="text-[#c9a84c]">Diani</span>
             </h2>
             <p className="text-stone-500 font-light mt-2 text-sm max-w-md">
               Carefully vetted accommodations for every traveller — from barefoot luxury to smart budgets.
@@ -229,18 +229,18 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
           <div className="relative flex-shrink-0">
             <button
               onClick={() => setShowSortDropdown(!showSortDropdown)}
-              className="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-white/20 rounded-xl px-4 py-2.5 text-xs font-medium text-stone-300 transition-all"
+              className="flex items-center gap-2 bg-white border border-stone-200 hover:border-[#c9a84c]/40 rounded-xl px-4 py-2.5 text-xs font-medium text-stone-600 transition-all shadow-sm"
             >
               {sortBy}
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${showSortDropdown ? "rotate-180" : ""}`} />
             </button>
             {showSortDropdown && (
-              <div className="absolute top-[110%] right-0 w-52 bg-[#0d1a28] border border-white/10 rounded-xl p-1 shadow-2xl z-20">
+              <div className="absolute top-[110%] right-0 w-52 bg-white border border-stone-100 rounded-xl p-1 shadow-xl z-20">
                 {SORT_OPTIONS.map((o) => (
                   <button
                     key={o}
                     onClick={() => { setSortBy(o); setShowSortDropdown(false); }}
-                    className={`w-full text-left px-4 py-2.5 text-xs hover:bg-white/8 rounded-lg transition ${sortBy === o ? "text-[#e5c158] font-semibold" : "text-stone-400"}`}
+                    className={`w-full text-left px-4 py-2.5 text-xs hover:bg-stone-50 rounded-lg transition ${sortBy === o ? "text-[#c9a84c] font-semibold" : "text-stone-500"}`}
                   >
                     {o}
                   </button>
@@ -258,8 +258,8 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
               onClick={() => { setActiveFilter(f); setVisibleCount(PAGE_SIZE); }}
               className={`px-4 py-1.5 rounded-full border text-xs font-medium tracking-wide transition-all ${
                 activeFilter === f
-                  ? "bg-[#c9a84c] text-[#0B151F] border-[#c9a84c] font-bold shadow-lg shadow-[#c9a84c]/20"
-                  : "bg-white/4 text-stone-400 border-white/10 hover:border-white/25 hover:text-stone-200"
+                  ? "bg-[#c9a84c] text-[#0B151F] border-[#c9a84c] font-bold shadow-md shadow-[#c9a84c]/20"
+                  : "bg-white text-stone-500 border-stone-200 hover:border-[#c9a84c]/40 hover:text-[#1c2735]"
               }`}
               type="button"
             >
@@ -285,7 +285,7 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
           {hasMore ? (
             <button
               onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
-              className="group inline-flex items-center gap-2.5 border border-[#c9a84c]/30 text-[#e5c158] hover:bg-[#c9a84c] hover:text-[#0B151F] px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:border-[#c9a84c] hover:shadow-lg hover:shadow-[#c9a84c]/20"
+              className="group inline-flex items-center gap-2.5 border border-[#c9a84c]/50 text-[#c9a84c] bg-white hover:bg-[#c9a84c] hover:text-[#0B151F] px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:border-[#c9a84c] hover:shadow-lg hover:shadow-[#c9a84c]/20 shadow-sm"
               type="button"
             >
               Load More Properties

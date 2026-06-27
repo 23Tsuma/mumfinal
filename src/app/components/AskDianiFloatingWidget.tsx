@@ -301,7 +301,7 @@ export function DianiAIConciergeWidget() {
           </div>
 
           <div className="p-3 bg-white border-t flex gap-2">
-            <input value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && send(input)} placeholder="Ask your concierge..." className="flex-1 border text-xs px-3 py-2 rounded-xl bg-[#fdf8f0] outline-none" />
+            <input value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && send(input)} placeholder="Ask your concierge..." className="flex-1 border text-xs px-3 py-2 rounded-xl bg-[#fdf8f0] text-gray-900 placeholder-gray-400 outline-none" />
             <button onClick={() => send(input)} className="bg-[#c9a84c] px-4 py-2 rounded-xl text-xs font-bold"><Send className="w-3.5 h-3.5"/></button>
           </div>
         </div>

@@ -345,23 +345,23 @@ export default function PropertyDetails() {
   const gridImages = heroImages.slice(0, 5);
 
   return (
-    <div className="min-h-screen bg-[#050a10] text-white antialiased">
+    <div className="min-h-screen bg-[#f8f3ea] text-[#1c2735] antialiased">
       {/* ====== FLOATING TOP BAR ====== */}
-      <div className="sticky top-0 z-40 bg-[#050a10]/90 backdrop-blur-xl border-b border-white/5 px-4 py-3">
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-stone-100 px-4 py-3 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-stone-400 hover:text-white text-sm font-medium transition">
+          <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-stone-500 hover:text-[#1c2735] text-sm font-medium transition">
             <ArrowLeft className="w-4 h-4" />
             Back
           </button>
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSaved(!saved)}
-              className="flex items-center gap-1.5 text-stone-400 hover:text-white text-xs transition font-medium px-3 py-1.5 rounded-full border border-white/10 hover:border-white/20"
+              className="flex items-center gap-1.5 text-stone-500 hover:text-[#1c2735] text-xs transition font-medium px-3 py-1.5 rounded-full border border-stone-200 hover:border-stone-300"
             >
               <Heart className={`w-3.5 h-3.5 ${saved ? "fill-rose-400 text-rose-400" : ""}`} />
               Save
             </button>
-            <button className="flex items-center gap-1.5 text-stone-400 hover:text-white text-xs transition font-medium px-3 py-1.5 rounded-full border border-white/10 hover:border-white/20">
+            <button className="flex items-center gap-1.5 text-stone-500 hover:text-[#1c2735] text-xs transition font-medium px-3 py-1.5 rounded-full border border-stone-200 hover:border-stone-300">
               <Share2 className="w-3.5 h-3.5" />
               Share
             </button>
@@ -402,40 +402,40 @@ export default function PropertyDetails() {
             {/* Property Header */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c9a84c]/15 border border-[#c9a84c]/30 text-[#e5c158] text-[10px] font-bold uppercase tracking-widest">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c9a84c]/12 border border-[#c9a84c]/30 text-[#b8922e] text-[10px] font-bold uppercase tracking-widest">
                   <Award className="w-3 h-3" />
                   {propertyTypeLabel}
                 </span>
-                <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-stone-300 text-[10px] font-medium">
+                <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-600 text-[10px] font-medium">
                   <MapPin className="w-3 h-3 text-[#c9a84c]" />
                   Diani Beach, Kenya
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h1 className="text-4xl sm:text-5xl font-black text-[#1c2735] tracking-tight mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 {propertyName}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-sm text-stone-400">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-stone-500">
                 <div className="flex items-center gap-1.5">
-                  <Star className="w-4 h-4 fill-[#e5c158] text-[#e5c158]" />
-                  <span className="font-bold text-white">{meta.rating}</span>
+                  <Star className="w-4 h-4 fill-[#c9a84c] text-[#c9a84c]" />
+                  <span className="font-bold text-[#1c2735]">{meta.rating}</span>
                   <span>({meta.reviews} reviews)</span>
                 </div>
-                <span className="text-white/20">·</span>
+                <span className="text-stone-300">·</span>
                 <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#c9a84c]/70" /> {meta.guests} guests</span>
-                <span className="text-white/20">·</span>
+                <span className="text-stone-300">·</span>
                 <span className="flex items-center gap-1.5"><BedDouble className="w-4 h-4 text-[#c9a84c]/70" /> {meta.beds} bedrooms</span>
-                <span className="text-white/20">·</span>
+                <span className="text-stone-300">·</span>
                 <span>{meta.baths} bathrooms</span>
               </div>
             </div>
 
             {/* Divider */}
-            <div className="h-px bg-white/8 mb-8" />
+            <div className="h-px bg-stone-200 mb-8" />
 
             {/* Tabs */}
-            <div className="flex gap-1 mb-8 bg-white/5 p-1 rounded-xl border border-white/8 w-fit">
+            <div className="flex gap-1 mb-8 bg-stone-100 p-1 rounded-xl border border-stone-200 w-fit">
               {(["overview", "rates", "gallery"] as const).map((tab) => (
                 <button
                   key={tab}
@@ -443,7 +443,7 @@ export default function PropertyDetails() {
                   className={`px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
                     activeTab === tab
                       ? "bg-[#c9a84c] text-[#0B151F] shadow-md"
-                      : "text-stone-400 hover:text-white"
+                      : "text-stone-500 hover:text-[#1c2735]"
                   }`}
                 >
                   {tab}
@@ -456,44 +456,44 @@ export default function PropertyDetails() {
               <div className="space-y-10">
                 {/* Description */}
                 <div>
-                  <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>About this property</h2>
-                  <p className="text-stone-400 leading-relaxed text-sm">{propertyDescription}</p>
+                  <h2 className="text-xl font-bold text-[#1c2735] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>About this property</h2>
+                  <p className="text-stone-600 leading-relaxed text-sm">{propertyDescription}</p>
                 </div>
 
-                <div className="h-px bg-white/8" />
+                <div className="h-px bg-stone-200" />
 
                 {/* Amenities */}
                 <div>
-                  <h2 className="text-xl font-bold text-white mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>What's included</h2>
+                  <h2 className="text-xl font-bold text-[#1c2735] mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>What's included</h2>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                     {amenities.map(({ icon: Icon, label }) => (
-                      <div key={label} className="flex items-center gap-3 bg-white/4 border border-white/8 rounded-xl p-3.5 hover:border-[#c9a84c]/30 hover:bg-white/6 transition-all">
+                      <div key={label} className="flex items-center gap-3 bg-white border border-stone-100 rounded-xl p-3.5 hover:border-[#c9a84c]/40 hover:shadow-sm transition-all shadow-sm">
                         <div className="w-8 h-8 rounded-lg bg-[#c9a84c]/10 border border-[#c9a84c]/20 flex items-center justify-center shrink-0">
-                          <Icon className="w-4 h-4 text-[#e5c158]" />
+                          <Icon className="w-4 h-4 text-[#c9a84c]" />
                         </div>
-                        <span className="text-stone-300 text-xs font-medium leading-tight">{label}</span>
+                        <span className="text-stone-600 text-xs font-medium leading-tight">{label}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="h-px bg-white/8" />
+                <div className="h-px bg-stone-200" />
 
                 {/* Stay details */}
                 <div>
-                  <h2 className="text-xl font-bold text-white mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Stay details</h2>
+                  <h2 className="text-xl font-bold text-[#1c2735] mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Stay details</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {[
                       { label: "Check-in", value: "From 12:00 noon", icon: Clock },
                       { label: "Check-out", value: "By 10:00 AM", icon: Clock },
                       { label: "Min. Stay", value: `${meta.minStay} night${meta.minStay > 1 ? "s" : ""}`, icon: BedDouble },
                     ].map(({ label, value, icon: Icon }) => (
-                      <div key={label} className="bg-white/4 border border-white/8 rounded-xl p-4">
+                      <div key={label} className="bg-white border border-stone-100 rounded-xl p-4 shadow-sm">
                         <div className="flex items-center gap-2 mb-2">
-                          <Icon className="w-4 h-4 text-[#e5c158]" />
-                          <span className="text-[10px] text-stone-500 uppercase tracking-wider font-bold">{label}</span>
+                          <Icon className="w-4 h-4 text-[#c9a84c]" />
+                          <span className="text-[10px] text-stone-400 uppercase tracking-wider font-bold">{label}</span>
                         </div>
-                        <p className="text-white font-semibold text-sm">{value}</p>
+                        <p className="text-[#1c2735] font-semibold text-sm">{value}</p>
                       </div>
                     ))}
                   </div>
@@ -502,14 +502,14 @@ export default function PropertyDetails() {
                 {/* Enzi-specific content */}
                 {key === "enzi" && (
                   <>
-                    <div className="h-px bg-white/8" />
+                    <div className="h-px bg-stone-200" />
                     <div>
-                      <h2 className="text-xl font-bold text-white mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Apartment Features</h2>
+                      <h2 className="text-xl font-bold text-[#1c2735] mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Apartment Features</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {ENZI_FEATURES.map((feature) => (
-                          <div key={feature} className="flex items-center gap-3 bg-white/4 border border-white/8 rounded-xl p-3.5">
-                            <CheckCircle2 className="w-4 h-4 text-[#e5c158] shrink-0" />
-                            <span className="text-stone-300 text-sm">{feature}</span>
+                          <div key={feature} className="flex items-center gap-3 bg-white border border-stone-100 rounded-xl p-3.5 shadow-sm">
+                            <CheckCircle2 className="w-4 h-4 text-[#c9a84c] shrink-0" />
+                            <span className="text-stone-600 text-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -522,43 +522,43 @@ export default function PropertyDetails() {
             {/* ====== TAB: RATES ====== */}
             {activeTab === "rates" && (
               <div className="space-y-6">
-                <h2 className="text-xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>Room Rates & Packages</h2>
+                <h2 className="text-xl font-bold text-[#1c2735]" style={{ fontFamily: "'Playfair Display', serif" }}>Room Rates & Packages</h2>
 
                 {key === "enzi" ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {ENZI_ROOM_PRICES.map((room) => (
-                      <div key={room.title} className="bg-white/4 border border-white/8 hover:border-[#c9a84c]/30 rounded-2xl p-5 transition-all group">
-                        <div className="text-[9px] text-[#e5c158] font-bold uppercase tracking-widest mb-2">Apartment Type</div>
-                        <h3 className="text-lg font-bold text-white mb-3">{room.title}</h3>
-                        <div className="text-2xl font-black text-[#e5c158] mb-2">{room.price}</div>
+                      <div key={room.title} className="bg-white border border-stone-100 hover:border-[#c9a84c]/40 rounded-2xl p-5 transition-all shadow-sm hover:shadow-md group">
+                        <div className="text-[9px] text-[#c9a84c] font-bold uppercase tracking-widest mb-2">Apartment Type</div>
+                        <h3 className="text-lg font-bold text-[#1c2735] mb-3">{room.title}</h3>
+                        <div className="text-2xl font-black text-[#c9a84c] mb-2">{room.price}</div>
                         <p className="text-stone-500 text-xs">{room.note}</p>
                         <button onClick={handleOpenBookingModal} className="mt-4 w-full bg-[#c9a84c] hover:brightness-110 text-[#0B151F] font-bold py-2.5 rounded-xl text-xs tracking-wide transition">
-                          Reserve This Room
+                          Reserve Your Stay
                         </button>
                       </div>
                     ))}
                   </div>
                 ) : key === "diani-pearl" ? (
-                  <div className="bg-white/4 border border-white/8 rounded-2xl overflow-hidden">
-                    <div className="p-5 border-b border-white/8">
-                      <p className="text-stone-400 text-sm">All rates are per night in Kenya Shillings (KES).</p>
+                  <div className="bg-white border border-stone-100 rounded-2xl overflow-hidden shadow-sm">
+                    <div className="p-5 border-b border-stone-100">
+                      <p className="text-stone-500 text-sm">All rates are per night in Kenya Shillings (KES).</p>
                     </div>
                     <div className="overflow-x-auto">
                       <table className="w-full text-left">
                         <thead>
-                          <tr className="border-b border-white/8">
-                            <th className="px-5 py-3 text-[10px] text-stone-500 font-bold uppercase tracking-wider">Type</th>
+                          <tr className="border-b border-stone-100 bg-stone-50">
+                            <th className="px-5 py-3 text-[10px] text-stone-400 font-bold uppercase tracking-wider">Type</th>
                             {Object.values(DIANI_PEARL_RATES.seasons).map((s) => (
-                              <th key={s} className="px-4 py-3 text-[10px] text-stone-500 font-bold uppercase tracking-wider whitespace-nowrap">{s}</th>
+                              <th key={s} className="px-4 py-3 text-[10px] text-stone-400 font-bold uppercase tracking-wider whitespace-nowrap">{s}</th>
                             ))}
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-white/5">
+                        <tbody className="divide-y divide-stone-50">
                           {(["2-bedroom", "1-bedroom", "studio"] as const).map((type) => (
-                            <tr key={type} className="hover:bg-white/3 transition-colors">
-                              <td className="px-5 py-4 font-semibold text-white text-sm capitalize">{type.replace("-", " ")}</td>
+                            <tr key={type} className="hover:bg-stone-50 transition-colors">
+                              <td className="px-5 py-4 font-semibold text-[#1c2735] text-sm capitalize">{type.replace("-", " ")}</td>
                               {Object.values(DIANI_PEARL_RATES.seasons).map((s) => (
-                                <td key={s} className="px-4 py-4 text-[#e5c158] font-bold text-sm whitespace-nowrap">
+                                <td key={s} className="px-4 py-4 text-[#c9a84c] font-bold text-sm whitespace-nowrap">
                                   KSh {(DIANI_PEARL_RATES.ksh[type] as any)[s].toLocaleString()}
                                 </td>
                               ))}
@@ -574,14 +574,14 @@ export default function PropertyDetails() {
                       { title: "2-Bedroom Apartment", price: "KSh 10,000 / night", peak: "KSh 18,000 peak", note: "Fully furnished · Family or small groups" },
                       { title: "6-Bedroom Exclusive Villa", price: "KSh 30,000 / night", peak: "KSh 55,000 peak", note: "Ultimate privacy · Large groups & retreats" },
                     ].map((room) => (
-                      <div key={room.title} className="bg-white/4 border border-white/8 hover:border-[#c9a84c]/30 rounded-2xl p-5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div key={room.title} className="bg-white border border-stone-100 hover:border-[#c9a84c]/40 rounded-2xl p-5 transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                          <h3 className="font-bold text-white text-base mb-1">{room.title}</h3>
+                          <h3 className="font-bold text-[#1c2735] text-base mb-1">{room.title}</h3>
                           <p className="text-stone-500 text-xs">{room.note}</p>
                         </div>
                         <div className="text-right shrink-0">
-                          <div className="text-[#e5c158] font-black text-xl">{room.price}</div>
-                          <div className="text-stone-600 text-xs">{room.peak}</div>
+                          <div className="text-[#c9a84c] font-black text-xl">{room.price}</div>
+                          <div className="text-stone-400 text-xs">{room.peak}</div>
                         </div>
                       </div>
                     ))}
@@ -593,22 +593,22 @@ export default function PropertyDetails() {
                       const lowRate = r.ksh.bb.low;
                       const peakRate = r.ksh.bb.peak;
                       return (
-                        <div key={rk} className="bg-white/4 border border-white/8 hover:border-[#c9a84c]/30 rounded-2xl p-5 transition-all">
+                        <div key={rk} className="bg-white border border-stone-100 hover:border-[#c9a84c]/40 rounded-2xl p-5 transition-all shadow-sm hover:shadow-md">
                           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div>
-                              <h3 className="font-bold text-white text-base mb-1">{r.title}</h3>
+                              <h3 className="font-bold text-[#1c2735] text-base mb-1">{r.title}</h3>
                               <p className="text-stone-500 text-xs">{r.bedNote}</p>
-                              {r.beachAccessNote && <p className="text-[#e5c158]/70 text-xs mt-1">{r.beachAccessNote}</p>}
+                              {r.beachAccessNote && <p className="text-[#c9a84c]/80 text-xs mt-1">{r.beachAccessNote}</p>}
                               <div className="flex gap-2 mt-2">
-                                <span className="text-[9px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-stone-400">Sleeps {r.sleeps}</span>
-                                <span className="text-[9px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-stone-400">B&B or Room Only</span>
+                                <span className="text-[9px] bg-stone-100 border border-stone-200 px-2 py-0.5 rounded-full text-stone-500">Sleeps {r.sleeps}</span>
+                                <span className="text-[9px] bg-stone-100 border border-stone-200 px-2 py-0.5 rounded-full text-stone-500">B&B or Room Only</span>
                               </div>
                             </div>
                             <div className="text-right shrink-0">
-                              <div className="text-[#e5c158] font-black text-xl">KSh {lowRate.toLocaleString()}</div>
-                              <div className="text-stone-600 text-xs">Peak: KSh {peakRate.toLocaleString()}</div>
-                              <button onClick={handleOpenBookingModal} className="mt-3 bg-[#c9a84c] hover:brightness-110 text-[#0B151F] font-bold px-5 py-2 rounded-xl text-xs tracking-wide transition">
-                                Reserve
+                              <div className="text-[#c9a84c] font-black text-xl">KSh {lowRate.toLocaleString()}</div>
+                              <div className="text-stone-400 text-xs">Peak: KSh {peakRate.toLocaleString()}</div>
+                              <button onClick={handleOpenBookingModal} className="mt-3 bg-[#c9a84c] hover:brightness-110 text-[#0B151F] font-bold px-5 py-2 rounded-xl text-xs tracking-wide transition shadow-sm">
+                                Reserve Your Stay
                               </button>
                             </div>
                           </div>
@@ -621,10 +621,10 @@ export default function PropertyDetails() {
                 {/* Enzi video tours */}
                 {key === "enzi" && (
                   <div className="mt-8">
-                    <h2 className="text-xl font-bold text-white mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Video Tours</h2>
+                    <h2 className="text-xl font-bold text-[#1c2735] mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Video Tours</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       {ENZI_VIDEOS.map((video) => (
-                        <div key={video.title} className="rounded-2xl overflow-hidden border border-white/8 bg-white/3">
+                        <div key={video.title} className="rounded-2xl overflow-hidden border border-stone-100 bg-white shadow-sm">
                           <div className="aspect-video bg-black">
                             <video autoPlay loop muted playsInline controls className="w-full h-full object-cover" preload="metadata">
                               <source src={video.src} type="video/mp4" />
@@ -635,7 +635,7 @@ export default function PropertyDetails() {
                               <PlayCircle className="w-4 h-4" />
                               <span className="text-[10px] font-bold uppercase tracking-wider">Video Tour</span>
                             </div>
-                            <h3 className="font-bold text-white text-sm">{video.title}</h3>
+                            <h3 className="font-bold text-[#1c2735] text-sm">{video.title}</h3>
                           </div>
                         </div>
                       ))}
@@ -648,10 +648,10 @@ export default function PropertyDetails() {
             {/* ====== TAB: GALLERY ====== */}
             {activeTab === "gallery" && (
               <div>
-                <h2 className="text-xl font-bold text-white mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Property Gallery</h2>
+                <h2 className="text-xl font-bold text-[#1c2735] mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>Property Gallery</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {heroImages.map((img, i) => (
-                    <div key={i} className="relative aspect-square rounded-xl overflow-hidden cursor-pointer group" onClick={() => openGallery(i)}>
+                    <div key={i} className="relative aspect-square rounded-xl overflow-hidden cursor-pointer group shadow-sm" onClick={() => openGallery(i)}>
                       <img src={img} alt={`${propertyName} ${i + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                         <span className="text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 px-3 py-1 rounded-full">View</span>
@@ -667,40 +667,40 @@ export default function PropertyDetails() {
           <div ref={sidebarRef}>
             <div className="sticky top-20">
               {/* Price card */}
-              <div className="bg-[#0d1a28] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="bg-white border border-stone-100 rounded-2xl overflow-hidden shadow-lg">
                 {/* Price header */}
-                <div className="p-6 border-b border-white/8">
+                <div className="p-6 border-b border-stone-100 bg-gradient-to-br from-[#c9a84c]/5 to-transparent">
                   <div className="flex items-end justify-between mb-1">
                     <div>
-                      <span className="text-3xl font-black text-white">KSh {line.ksh.toLocaleString()}</span>
-                      <span className="text-stone-500 text-sm ml-2">/ night</span>
+                      <span className="text-3xl font-black text-[#1c2735]">KSh {line.ksh.toLocaleString()}</span>
+                      <span className="text-stone-400 text-sm ml-2">/ night</span>
                     </div>
-                    <div className="flex items-center gap-1 bg-[#c9a84c]/15 border border-[#c9a84c]/25 px-2.5 py-1 rounded-lg">
-                      <Star className="w-3.5 h-3.5 fill-[#e5c158] text-[#e5c158]" />
-                      <span className="text-[#e5c158] font-bold text-xs">{meta.rating}</span>
+                    <div className="flex items-center gap-1 bg-[#c9a84c]/12 border border-[#c9a84c]/25 px-2.5 py-1 rounded-lg">
+                      <Star className="w-3.5 h-3.5 fill-[#c9a84c] text-[#c9a84c]" />
+                      <span className="text-[#b8922e] font-bold text-xs">{meta.rating}</span>
                     </div>
                   </div>
                   {typeof line.usd === "number" && (
-                    <p className="text-stone-600 text-xs">≈ ${line.usd} USD per night</p>
+                    <p className="text-stone-400 text-xs">≈ ${line.usd} USD per night</p>
                   )}
                 </div>
 
                 {/* Quick booking form */}
                 <div className="p-6 space-y-3">
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                      <p className="text-[9px] text-stone-500 uppercase tracking-widest font-bold mb-1">Check-in</p>
-                      <input type="date" className="bg-transparent text-white text-xs font-semibold w-full outline-none [color-scheme:dark]" />
+                    <div className="bg-stone-50 border border-stone-200 rounded-xl p-3">
+                      <p className="text-[9px] text-stone-400 uppercase tracking-widest font-bold mb-1">Check-in</p>
+                      <input type="date" className="bg-transparent text-[#1c2735] text-xs font-semibold w-full outline-none" />
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                      <p className="text-[9px] text-stone-500 uppercase tracking-widest font-bold mb-1">Check-out</p>
-                      <input type="date" className="bg-transparent text-white text-xs font-semibold w-full outline-none [color-scheme:dark]" />
+                    <div className="bg-stone-50 border border-stone-200 rounded-xl p-3">
+                      <p className="text-[9px] text-stone-400 uppercase tracking-widest font-bold mb-1">Check-out</p>
+                      <input type="date" className="bg-transparent text-[#1c2735] text-xs font-semibold w-full outline-none" />
                     </div>
                   </div>
 
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                    <p className="text-[9px] text-stone-500 uppercase tracking-widest font-bold mb-1">Guests</p>
-                    <select className="bg-transparent text-white text-xs font-semibold w-full outline-none [color-scheme:dark]">
+                  <div className="bg-stone-50 border border-stone-200 rounded-xl p-3">
+                    <p className="text-[9px] text-stone-400 uppercase tracking-widest font-bold mb-1">Guests</p>
+                    <select className="bg-transparent text-[#1c2735] text-xs font-semibold w-full outline-none">
                       {Array.from({ length: meta.guests }, (_, i) => i + 1).map((n) => (
                         <option key={n} value={n}>{n} {n === 1 ? "guest" : "guests"}</option>
                       ))}
@@ -709,31 +709,24 @@ export default function PropertyDetails() {
 
                   <button
                     onClick={handleOpenBookingModal}
-                    className="w-full bg-gradient-to-r from-[#c9a84c] to-[#e5c158] text-[#0B151F] font-black py-4 rounded-xl tracking-wide transition hover:brightness-110 hover:shadow-lg hover:shadow-[#c9a84c]/20 text-sm"
+                    className="w-full bg-gradient-to-r from-[#c9a84c] to-[#e5c158] text-[#0B151F] font-black py-4 rounded-xl tracking-wide transition hover:brightness-110 hover:shadow-lg hover:shadow-[#c9a84c]/25 text-sm"
                   >
-                    Reserve Now
+                    Reserve Your Stay
                   </button>
 
-                  <button
-                    onClick={handleOpenBookingModal}
-                    className="w-full border border-white/15 text-white font-bold py-3 rounded-xl text-xs tracking-wide transition hover:bg-white/5"
-                  >
-                    Book This Property
-                  </button>
-
-                  <p className="text-center text-stone-600 text-[10px]">No charge until confirmation · Free cancellation</p>
+                  <p className="text-center text-stone-400 text-[10px]">No charge until confirmation · Free cancellation</p>
                 </div>
 
                 {/* Property highlights */}
                 <div className="px-6 pb-6 space-y-2.5">
-                  <div className="h-px bg-white/8 mb-4" />
+                  <div className="h-px bg-stone-100 mb-4" />
                   {[
                     { icon: Shield, text: "Verified property — safety guaranteed" },
                     { icon: Clock, text: `Minimum ${meta.minStay} night stay` },
                     { icon: CheckCircle2, text: "Instant reservation confirmation" },
                   ].map(({ icon: Icon, text }) => (
                     <div key={text} className="flex items-center gap-2.5 text-xs text-stone-500">
-                      <Icon className="w-3.5 h-3.5 text-[#c9a84c]/70 shrink-0" />
+                      <Icon className="w-3.5 h-3.5 text-[#c9a84c] shrink-0" />
                       {text}
                     </div>
                   ))}
@@ -741,13 +734,13 @@ export default function PropertyDetails() {
               </div>
 
               {/* Contact card */}
-              <div className="mt-4 bg-[#0d1a28] border border-white/10 rounded-2xl p-5">
-                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-bold mb-3">Need help deciding?</p>
+              <div className="mt-4 bg-white border border-stone-100 rounded-2xl p-5 shadow-sm">
+                <p className="text-[10px] text-stone-400 uppercase tracking-widest font-bold mb-3">Need help deciding?</p>
                 <a
                   href={`https://wa.me/254792850349?text=Hi! I'm interested in ${encodeURIComponent(propertyName)}. Can you help me?`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full border border-[#25D366]/30 bg-[#25D366]/8 text-[#25D366] hover:bg-[#25D366] hover:text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all"
+                  className="flex items-center justify-center gap-2 w-full border border-[#25D366]/40 bg-[#25D366]/8 text-[#1a9e4a] hover:bg-[#25D366] hover:text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all"
                 >
                   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
                   Chat on WhatsApp
