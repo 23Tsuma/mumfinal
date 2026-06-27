@@ -11,7 +11,7 @@ export type Property = {
   name: string;
   type: string;
   location: string;
-  price: number; // KES per night
+  price: number;
   priceUSD: number;
   rating: number;
   reviews: number;
@@ -26,90 +26,85 @@ export type Property = {
   minStay: number;
 };
 
-// Canonical list of all properties used for AI recommendations.
 export const PROPERTIES: Property[] = [
   {
     id: 1,
     name: "Mum's Backpackers",
-    type: "Hostel",
+    type: "Beachside Lodge",
     location: "Diani Center",
     price: 2200,
-    priceUSD: 143,
+    priceUSD: 17,
     rating: 4.97,
     reviews: 214,
     guests: 8,
     beds: 4,
     baths: 3,
-    image:
-      "https://images.unsplash.com/photo-1758117638928-c03fcca424c7?w=800&h=600&fit=crop&auto=format",
+    image: "/src/imports/images/mums-2.jpg",
     tags: ["Pool", "Beachfront", "WiFi", "AC"],
     badge: "Top Rated",
     featured: true,
     description:
-      "Wake up to ocean views from every room. Private infinity pool, direct beach access, fully staffed.",
-    minStay: 3,
+      "Wake up to ocean views from every room. Private infinity pool, direct beach access, fully staffed. Diani's most loved stay.",
+    minStay: 1,
   },
   {
     id: 2,
     name: "Apple Mango Apartments",
-    type: "Hostel",
+    type: "Private Villa",
     location: "Diani Center",
-    price: 2200,
-    priceUSD: 17,
+    price: 10000,
+    priceUSD: 77,
     rating: 4.85,
     reviews: 631,
-    guests: 1,
-    beds: 1,
-    baths: 1,
-    image:
-      "https://images.unsplash.com/photo-1708119063168-4785d1359824?w=800&h=600&fit=crop&auto=format",
-    tags: ["WiFi", "Pool", "Bar", "Lockers"],
+    guests: 6,
+    beds: 3,
+    baths: 2,
+    image: "/src/imports/Apple Mango/aerial.jpg",
+    tags: ["WiFi", "Pool", "Garden", "Parking"],
     badge: "Best Value",
     featured: false,
     description:
-      "The social hub of Diani. Meet fellow travellers, join beach trips, and sleep well for less.",
+      "Spacious and fully furnished villa with a beautiful garden and pool. Perfect for families and groups looking for comfort and privacy.",
     minStay: 1,
   },
   {
     id: 3,
     name: "Diani Pearl Resort",
-    type: "Luxury Cottage",
+    type: "Luxury Apartments",
     location: "North Diani Beach",
-    price: 32000,
-    priceUSD: 247,
+    price: 20000,
+    priceUSD: 154,
     rating: 5.0,
     reviews: 88,
-    guests: 2,
-    beds: 1,
+    guests: 4,
+    beds: 2,
     baths: 2,
-    image:
-      "https://images.unsplash.com/photo-1629553032544-3c1477c0eac9?w=800&h=600&fit=crop&auto=format",
-    tags: ["Ocean View", "Jacuzzi", "Butler", "Couples"],
+    image: "/src/imports/diani pearl/Exterior+elevated+2.webp",
+    tags: ["Ocean View", "Pool", "Luxury", "AC"],
     badge: "Honeymoon Pick",
     featured: false,
     description:
-      "Secluded couples retreat. Plunge pool, open-air shower, champagne on arrival. Pure romance.",
+      "Elegant luxury apartments with sweeping ocean views, rooftop pool, and premium finishes. A sophisticated Diani retreat.",
     minStay: 2,
   },
   {
     id: 4,
     name: "Enzi Furnished Apartments",
-    type: "Furnished Apartments",
+    type: "Furnished Suites",
     location: "Diani Beach Road",
-    price: 24000,
-    priceUSD: 185,
+    price: 8000,
+    priceUSD: 62,
     rating: 4.92,
     reviews: 177,
     guests: 6,
     beds: 3,
     baths: 2,
-    image:
-      "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?w=800&h=600&fit=crop&auto=format",
-    tags: ["WiFi", "Comfort", "Kitchen", "Parking"],
+    image: "/src/imports/Enzi/e1.jpg",
+    tags: ["WiFi", "Pool", "Kitchen", "Parking"],
     badge: "Handpicked Stay",
     featured: false,
     description:
-      "Modern, fully furnished apartment living in Diani—comfortable spaces, thoughtful amenities, and an easy beach getaway.",
+      "Modern, light-filled apartments with stylish furnishings, fully equipped kitchens, and rooftop pool. The ideal Diani base.",
     minStay: 2,
   },
   {
@@ -124,14 +119,33 @@ export const PROPERTIES: Property[] = [
     guests: 4,
     beds: 2,
     baths: 2,
-    image:
-      "https://images.unsplash.com/photo-1688496761159-e9df8bf438a8?w=800&h=600&fit=crop&auto=format",
+    image: "/src/imports/coral beach/out.jpg",
     tags: ["Garden", "WiFi", "AC", "Near Beach"],
     badge: null,
     featured: false,
     description:
-      "Cosy Swahili-style cottage with lush tropical garden. 3-minute walk to Galu Beach.",
+      "Cosy Swahili-style cottage with lush tropical garden. 3-minute walk to pristine Galu Beach. Peaceful and authentic.",
     minStay: 2,
+  },
+  {
+    id: 6,
+    name: "Flamboyant Villa",
+    type: "Garden Villa",
+    location: "Diani Beach",
+    price: 22000,
+    priceUSD: 170,
+    rating: 4.88,
+    reviews: 95,
+    guests: 8,
+    beds: 4,
+    baths: 4,
+    image: "/src/imports/flamboyant/aerial.webp",
+    tags: ["Garden", "Pool", "Luxury", "Private"],
+    badge: "Luxury Pick",
+    featured: false,
+    description:
+      "Set within lush tropical gardens with a private pool, veranda, and spacious interiors. The ultimate Diani villa experience.",
+    minStay: 3,
   },
   {
     id: 7,
@@ -150,8 +164,7 @@ export const PROPERTIES: Property[] = [
     badge: "Luxury Pick",
     featured: false,
     description:
-      "A peaceful stay curated for guests seeking a serene environment, beautiful coastal surroundings, and a cozy holiday base.",
+      "A breathtaking beachfront villa with private infinity pool, dedicated chef, and direct ocean access. Diani's finest address.",
     minStay: 2,
   },
 ];
-

@@ -254,9 +254,15 @@ export function DianiAIConciergeWidget() {
     <div className="fixed bottom-6 right-6 z-50">
 
       {!open ? (
-        <button onClick={() => setOpen(true)} className="w-[60px] h-[60px] rounded-full bg-[#25D366] hover:bg-[#20bc5a] text-white flex flex-col items-center justify-center shadow-2xl transition-all">
-          <Bot className="w-5 h-5" />
-          <span className="text-[10px] font-bold mt-0.5">AI</span>
+        <button onClick={() => setOpen(true)} className="group flex items-center gap-3 bg-[#0B151F] border border-[#c9a84c]/30 hover:border-[#c9a84c]/60 text-white px-4 py-3 rounded-full shadow-2xl transition-all hover:shadow-[#c9a84c]/10 hover:shadow-lg">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#e5c158] flex items-center justify-center shadow-md">
+            <Bot className="w-4 h-4 text-[#0B151F]" />
+          </div>
+          <div className="text-left">
+            <div className="text-[11px] font-bold text-white leading-none">Diani Concierge</div>
+            <div className="text-[9px] text-stone-500 mt-0.5">Ask me anything</div>
+          </div>
+          <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
         </button>
       ) : (
         <div className="w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl border border-black/5 overflow-hidden">
@@ -295,7 +301,7 @@ export function DianiAIConciergeWidget() {
           </div>
 
           <div className="p-3 bg-white border-t flex gap-2">
-            <input value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && send(input)} placeholder="Ask MumAI..." className="flex-1 border text-xs px-3 py-2 rounded-xl bg-[#fdf8f0] outline-none" />
+            <input value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && send(input)} placeholder="Ask your concierge..." className="flex-1 border text-xs px-3 py-2 rounded-xl bg-[#fdf8f0] outline-none" />
             <button onClick={() => send(input)} className="bg-[#c9a84c] px-4 py-2 rounded-xl text-xs font-bold"><Send className="w-3.5 h-3.5"/></button>
           </div>
         </div>

@@ -1,0 +1,89 @@
+
+1.Real pictures of villas/
+2.Remove mum ai and add a nice ai 
+3.Refine landing page to the best
+4.Make search bar in home realistic
+5.Check any page to add for such a website like mine apart from this:
+Villas & Cottages,Nearby,Map,Gallery,About Us 
+6.Villas and cottages in footer reference to handpicked stays section
+7.View more properties button to load more properties
+8.Make three containers animate like moving in a circular like tv scrolling words but circular
+9.Stylish handpicked stays section 
+
+Feature implementation:
+User Journey
+Home
+  ↓
+Browse Villas & Cottages
+  ↓
+Property Details
+  ↓
+Reserve Now
+  ↓
+Reservation Submitted
+  ↓
+Reservation Processing
+  ↓
+Reservation Confirmed
+Notice there is no mention of contacting the property owner.
+
+Property Details Page
+Buttons:
+Reserve Now
+Book This Property
+Reserve Your Stay
+Avoid buttons like:
+Contact Owner
+Ask Owner
+Check With Owner
+
+Reservation Form
+Collect:
+Full Name
+Email
+Phone Number
+Check-in
+Check-out
+Adults
+Children
+Special Requests
+Button:
+Complete Reservation Request
+
+After Submission
+Instead of saying:
+"We are contacting the property owner."
+Say something like:
+🎉 Reservation Received
+Thank you for choosing us.
+Your reservation request has been received and is currently being processed.
+Our reservations team is verifying your selected dates and preparing your booking confirmation.
+You will receive an update shortly via WhatsApp, SMS, phone call, or email.
+Reservation Reference: RES-20260626-00124
+This is truthful without revealing your business arrangements.
+
+Reservation Statuses
+On the user dashboard, use statuses such as:
+Pending Review
+Processing
+Awaiting Confirmation
+Confirmed
+Completed
+Cancelled
+Avoid statuses like:
+Waiting for Owner
+Owner Approval Required
+
+Admin Dashboard
+Your internal workflow can be:
+Reservation Received
+       ↓
+Contact Property Manager
+       ↓
+Availability Confirmed
+       ↓
+Update Reservation
+       ↓
+Notify Guest
+Your customers never need to see these internal steps.
+
