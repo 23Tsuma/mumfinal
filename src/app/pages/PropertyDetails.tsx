@@ -345,9 +345,9 @@ export default function PropertyDetails() {
   const gridImages = heroImages.slice(0, 5);
 
   return (
-    <div className="min-h-screen bg-[#f8f3ea] text-[#1c2735] antialiased">
+    <div className="min-h-screen bg-[#f0fdf4] text-[#1c2735] antialiased">
       {/* ====== FLOATING TOP BAR ====== */}
-      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-stone-100 px-4 py-3 shadow-sm">
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-emerald-100 px-4 py-3 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-stone-500 hover:text-[#1c2735] text-sm font-medium transition">
             <ArrowLeft className="w-4 h-4" />

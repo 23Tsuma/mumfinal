@@ -62,7 +62,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f8f3ea] text-[#1c2735] font-sans overflow-x-hidden antialiased">
+    <div className="min-h-screen bg-[#f0fdf4] text-[#1c2735] font-sans overflow-x-hidden antialiased">
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Pinyon+Script&display=swap" rel="stylesheet" />
       <Navbar />
       {children}

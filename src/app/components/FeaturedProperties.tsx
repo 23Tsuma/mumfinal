@@ -10,12 +10,12 @@ const SORT_OPTIONS = ["Top Rated", "Price: Low to High", "Price: High to Low", "
 const PAGE_SIZE = 6;
 
 const badgeColors: Record<string, string> = {
-  "Top Rated": "bg-amber-500/20 text-amber-300 border border-amber-500/30",
-  "Best Value": "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30",
-  "Honeymoon Pick": "bg-rose-500/15 text-rose-300 border border-rose-500/30",
-  "Family Fave": "bg-indigo-500/15 text-indigo-300 border border-indigo-500/30",
-  "Luxury Pick": "bg-[#c9a84c]/15 text-[#e5c158] border border-[#c9a84c]/30",
-  "Handpicked Stay": "bg-teal-500/15 text-teal-300 border border-teal-500/30",
+  "Top Rated": "bg-amber-500/20 text-amber-200 border border-amber-400/30",
+  "Best Value": "bg-emerald-500/20 text-emerald-200 border border-emerald-400/30",
+  "Honeymoon Pick": "bg-rose-500/20 text-rose-200 border border-rose-400/30",
+  "Family Fave": "bg-sky-500/20 text-sky-200 border border-sky-400/30",
+  "Luxury Pick": "bg-[#c9a84c]/20 text-[#e5c158] border border-[#c9a84c]/30",
+  "Handpicked Stay": "bg-emerald-600/20 text-emerald-200 border border-emerald-500/30",
 };
 
 const PROPERTY_ROTATING_IMAGES: Record<string, string[]> = {
@@ -33,7 +33,7 @@ function PropertyCard({ p, onReserve, onExplore }: { p: Property; onReserve: (p:
   const rotatingImages = PROPERTY_ROTATING_IMAGES[p.name];
 
   return (
-    <div className="group relative bg-white border border-stone-100 rounded-2xl overflow-hidden hover:border-[#c9a84c]/40 transition-all duration-400 hover:shadow-xl hover:shadow-[#c9a84c]/8 flex flex-col shadow-sm">
+    <div className="group relative bg-white border border-emerald-100 rounded-2xl overflow-hidden hover:border-emerald-400/50 transition-all duration-400 hover:shadow-xl hover:shadow-emerald-200/60 flex flex-col shadow-sm">
       {/* Image */}
       <div className="relative h-56 overflow-hidden bg-[#0b1219]">
         {!imgError ? (
@@ -78,8 +78,8 @@ function PropertyCard({ p, onReserve, onExplore }: { p: Property; onReserve: (p:
       <div className="p-5 flex flex-col flex-1 gap-3">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
-            <div className="text-[9px] text-[#c9a84c] font-bold uppercase tracking-widest mb-0.5">{p.type}</div>
-            <h3 className="text-[#1c2735] text-base font-semibold tracking-wide group-hover:text-[#c9a84c] transition-colors line-clamp-1"
+            <div className="text-[9px] text-emerald-600 font-bold uppercase tracking-widest mb-0.5">{p.type}</div>
+            <h3 className="text-[#1c2735] text-base font-semibold tracking-wide group-hover:text-emerald-700 transition-colors line-clamp-1"
               style={{ fontFamily: "'Playfair Display', serif" }}>
               {p.name}
             </h3>
@@ -93,10 +93,10 @@ function PropertyCard({ p, onReserve, onExplore }: { p: Property; onReserve: (p:
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-stone-500 text-xs">
           <span className="flex items-center gap-1">
-            <MapPin className="w-3 h-3 text-[#c9a84c]/70" /> {p.location}
+            <MapPin className="w-3 h-3 text-emerald-500/80" /> {p.location}
           </span>
           <span className="flex items-center gap-1">
-            <Users className="w-3 h-3 text-[#c9a84c]/70" /> {p.guests} guests
+            <Users className="w-3 h-3 text-emerald-500/80" /> {p.guests} guests
           </span>
           <span className="text-stone-400">{p.beds} beds · {p.baths} baths</span>
         </div>
@@ -104,7 +104,7 @@ function PropertyCard({ p, onReserve, onExplore }: { p: Property; onReserve: (p:
         <p className="text-xs text-stone-500 leading-relaxed line-clamp-2 flex-1">{p.description}</p>
 
         {/* Footer */}
-        <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-3">
+        <div className="pt-3 border-t border-emerald-50 flex items-center justify-between gap-3">
           <div>
             <div className="text-[#c9a84c] font-bold text-base tracking-tight">
               KES {p.price.toLocaleString()}
@@ -203,10 +203,10 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
   };
 
   return (
-    <section className="py-20 bg-[#f8f3ea] relative overflow-hidden">
+    <section className="py-20 bg-[#f0fdf4] relative overflow-hidden">
       {/* Ambient glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#c9a84c]/6 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-200/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-200/30 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-300/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
@@ -240,7 +240,7 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
                   <button
                     key={o}
                     onClick={() => { setSortBy(o); setShowSortDropdown(false); }}
-                    className={`w-full text-left px-4 py-2.5 text-xs hover:bg-stone-50 rounded-lg transition ${sortBy === o ? "text-[#c9a84c] font-semibold" : "text-stone-500"}`}
+                    className={`w-full text-left px-4 py-2.5 text-xs hover:bg-emerald-50 rounded-lg transition ${sortBy === o ? "text-emerald-700 font-semibold" : "text-stone-500"}`}
                   >
                     {o}
                   </button>
@@ -258,8 +258,8 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
               onClick={() => { setActiveFilter(f); setVisibleCount(PAGE_SIZE); }}
               className={`px-4 py-1.5 rounded-full border text-xs font-medium tracking-wide transition-all ${
                 activeFilter === f
-                  ? "bg-[#c9a84c] text-[#0B151F] border-[#c9a84c] font-bold shadow-md shadow-[#c9a84c]/20"
-                  : "bg-white text-stone-500 border-stone-200 hover:border-[#c9a84c]/40 hover:text-[#1c2735]"
+                  ? "bg-emerald-600 text-white border-emerald-600 font-bold shadow-md shadow-emerald-600/25"
+                  : "bg-white text-stone-500 border-stone-200 hover:border-emerald-300 hover:text-emerald-700"
               }`}
               type="button"
             >
@@ -285,7 +285,7 @@ export function FeaturedProperties({ checkIn, checkOut, guestCount, preference, 
           {hasMore ? (
             <button
               onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
-              className="group inline-flex items-center gap-2.5 border border-[#c9a84c]/50 text-[#c9a84c] bg-white hover:bg-[#c9a84c] hover:text-[#0B151F] px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:border-[#c9a84c] hover:shadow-lg hover:shadow-[#c9a84c]/20 shadow-sm"
+              className="group inline-flex items-center gap-2.5 border border-emerald-400/60 text-emerald-700 bg-white hover:bg-emerald-600 hover:text-white px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:border-emerald-600 hover:shadow-lg hover:shadow-emerald-600/20 shadow-sm"
               type="button"
             >
               Load More Properties
